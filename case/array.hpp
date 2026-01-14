@@ -26,12 +26,17 @@ std::vector<T> get_random_permutation(T n) {
     return res;
 }
 
+/**
+ * 生成一个长度为 n + 1 的 vector
+ * index 0 = 0
+ * index 1 ~ n = [min, max] 范围内的随机数
+ */
 template<std::integral T>
 constexpr std::vector<T> get_random_integral_array(T n,
-                                      T min = std::numeric_limits<T>::min(),
-                                      T max = std::numeric_limits<T>::max()) {
+                                                   T min = std::numeric_limits<T>::min(),
+                                                   T max = std::numeric_limits<T>::max()) {
     std::vector<T> arr(n + 1);
-    std::ranges::for_each(arr, [min,max](T &item) {
+    std::ranges::for_each(arr | std::views::drop(1), [min,max](T &item) {
         item = get_random_integer<T>(min, max);
     });
     return arr;
