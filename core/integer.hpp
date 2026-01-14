@@ -4,9 +4,8 @@
 
 #ifndef CASEMAKER_INTEGER_HPP
 #define CASEMAKER_INTEGER_HPP
-#include <random>
 
-#include "core/integer.hpp"
+#include <random>
 
 /**
  * 生成 [min, max] 范围内的随机整数

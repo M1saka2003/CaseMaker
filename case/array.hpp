@@ -9,13 +9,14 @@
 #include <ranges>
 #include <numeric>
 
+#include "core/integer.hpp"
 /**
  * 生成一个长度为 n + 1 的 vector
  * index 0 = 0
  * index 1 ~ n = 1 ~ n 的随机排列
  */
 template<std::integral T>
-std::vector<T> get_random_permutation(T n) {
+constexpr std::vector<T> get_random_permutation(T n) {
     std::vector<T> res(n + 1);
     std::ranges::iota(res, 0);
 
