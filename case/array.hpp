@@ -8,6 +8,7 @@
 #include <random>
 #include <ranges>
 #include <numeric>
+#include <algorithm>
 #include <iostream>
 
 #include "core/integer.hpp"
